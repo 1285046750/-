@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+        <script type="text/javascript" src="jquery.js"></script>
+        <style>
+        </style>
+	</head>
+	<body>
+		<div class="big" style="background: red;"></div>
+		<div class="bag" style="background: green;"></div>
+		<div class="bag" style="background: tomato;"></div>
+		<div class="bag" style="background: darkcyan;"></div>
+		<div class="bag" style="background: gold;"></div>
+		<div class="bag" style="background: darksalmon;"></div>
+		<div class="bag" style="background: black;"></div>
+	</body>
+	<script type="text/javascript">
+	   $("div").css({"width":"100px","height":"100px","border-radius":"50%","border":"1px solid red","float":"left","position":"absolute","margin":"20px",})
+	   $(".bag").click(function(){
+	      $("div").css({"position":"relative"})
+	      $(this).css("back")
+	      $(".big").click(function(){
+	      	 $(".bag").css({"position":"absolute"})
+	      })
+	      var background = $(this).css('background');
+	      $('body').css('background',background);
+	    })
+	</script>
+</html>
