@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+ 
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><input type="checkbox" name="" id="huawei"></td>
+            <td><span>华为mate20</span></td>
+            <td><input type="text" id="ch2" value="1"></td>
+            <td><span>单价:<p id="dj">9999</p></span></td>
+            <td><span>总价:<p id="hj"></p></span></td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="" id="xiaomi"></td>
+            <td><span>小米8</span></td>
+            <td><input type="text" value="1" id="ch3"></td>
+            <td><span>单价:<p id="djs">8888</p></span></td>
+            <td><span>总价:<p id="hj2"></p></span></td>
+        </tr>
+        <tr>
+            <td>合计：</td>
+            <td><span><p id="zj">0</p></span></td>
+        </tr>
+    </table>
+    <script>
+        $('#ch2,#huawei').change(function(){
+            if($('#huawei').is(':checked') == true){
+                $('#hj').html($('#ch2').val()*$('#dj').html());
+            }else{
+                $('#hj').html('')
+            }
+            
+        })
+    
+        $('#ch3,#xiaomi').change(function(){
+            if($('#xiaomi').is(':checked') == true){
+                $('#hj2').html($('#ch3').val()*$('#djs').html());
+            }else{
+                $('#hj2').html('')
+            }
+        })
+        $('#huawei,#xiaomi,#ch2,#ch3').change(function(){
+            if($('#huawei').is(':checked') == true && $('#xiaomi').is(':checked') == true){
+                $('#num').html(parseInt($('#ch2').val())+parseInt($('#ch3').val()))
+                $('#zj').html(parseInt($('#hj').html())+parseInt($('#hj2').html()))
+            }else if($('#huawei').is(':checked') == true){
+                $('#num').html(parseInt($('#ch2').val()))
+                $('#zj').html(parseInt($('#hj').html()))
+            }else if($('#xiaomi').is(':checked') == true){
+                $('#num').html(parseInt($('#ch3').val()))
+                $('#zj').html(parseInt($('#hj2').html()))
+            }else{
+                $('#num').html('0')
+                $('#zj').html('0')
+            }
+        })
+        </script>
+</body>
+</html>
